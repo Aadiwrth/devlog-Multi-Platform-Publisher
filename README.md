@@ -154,7 +154,7 @@ devlog-Multi-Platform-Publisher/
 ├── bluesky_poster.py      # BlueSky integration module
 ├── database.py            # SQLite database management
 │
-├── .env.example           # Example environment variables
+├── .env           # Example environment variables
 ├── requirements.txt       # Python dependencies
 ├── README.md              # This file
 └── devlog_posts.db        # SQLite database (auto-generated)
@@ -244,38 +244,6 @@ pip install -r requirements.txt
    - BlueSky: First paragraph with link preview
 7. **Publishing**: Posts to all configured platforms asynchronously
 8. **Database Tracking**: Records successful posts per-platform to prevent duplicates
-
----
-
-## 🎨 Content Extraction Strategies
-
-The bot uses a sophisticated multi-layered approach to extract content:
-
-### Strategy 1: itch.io-Specific Containers
-```python
-# Searches for known itch.io content sections
-post_body = soup.find('section', class_='post_body')
-formatted_body = soup.find('div', class_='formatted_body')
-```
-
-### Strategy 2: Gallery Image Detection
-```python
-# Extracts high-quality gallery images
-post_images = soup.find('section', class_='post_images')
-lightbox_links = section.find_all('a', attrs={'data-image_lightbox': ''})
-```
-
-### Strategy 3: Fuzzy Content Matching
-```python
-# Matches scraped content against RSS description
-similarity = SequenceMatcher(None, rss_text, scraped_text).ratio()
-```
-
-### Strategy 4: Common Container Fallback
-```python
-# Tries standard content containers
-containers = ['article', 'main', 'div.content', 'div.entry-content']
-```
 
 ---
 
@@ -393,11 +361,11 @@ CHECK_INTERVAL_MINUTES=60  # In .env
 
 ## 🔐 Security Best Practices
 
-1. **Never commit `.env` file**: Already in `.gitignore`
-2. **Use app passwords**: For BlueSky, use app-specific passwords
-3. **Rotate credentials**: Regularly update API keys and tokens
-4. **Limit permissions**: Give bot only required permissions
-5. **Monitor logs**: Check for unauthorized access attempts
+
+1. **Use app passwords**: For BlueSky, use app-specific passwords
+2. **Rotate credentials**: Regularly update API keys and tokens
+3. **Limit permissions**: Give bot only required permissions
+4. **Monitor logs**: Check for unauthorized access attempts
 
 ```bash
 # Check if .env is tracked
@@ -470,7 +438,7 @@ in the Software without restriction...
 ### Discord Post
 ```
 ┌─────────────────────────────────────┐
-│ 🎮 New Character System Update      │
+│  New Character System Update      │
 ├─────────────────────────────────────┤
 │ ### Character Customization         │
 │                                     │
@@ -490,7 +458,7 @@ in the Software without restriction...
 
 ### Twitter Post
 ```
-🎮 New Character System Update
+New Character System Update
 
 We've implemented a new character customization 
 system that allows players to modify their avatars 
@@ -503,7 +471,7 @@ https://yourgame.itch.io/devlog/123
 
 ### BlueSky Post
 ```
-🎮 New Character System Update
+New Character System Update
 
 We've implemented a new character customization 
 system that allows players to modify their avatars 
@@ -519,7 +487,6 @@ Learn More => https://yourgame.itch.io/devlog/123
 ## 📞 Support
 
 - **Issues**: [GitHub Issues](https://github.com/Aadiwrth/devlog-Multi-Platform-Publisher/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/Aadiwrth/devlog-Multi-Platform-Publisher/discussions)
 - **Email**: Create an issue for support requests
 
 ---
