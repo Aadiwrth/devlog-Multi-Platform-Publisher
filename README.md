@@ -391,7 +391,7 @@ Contributions are welcome! Here's how to contribute:
 ### Development Setup
 ```bash
 # Clone your fork
-git clone https://github.com/yourusername/devlog-Multi-Platform-Publisher.git
+git clone https://github.com/Aadiwrth/devlog-Multi-Platform-Publisher.git
 
 # Add upstream remote
 git remote add upstream https://github.com/Aadiwrth/devlog-Multi-Platform-Publisher.git
